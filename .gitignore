@@ -1,0 +1,15 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# Uploads & temp data
+uploads/
+*.zip
+
+# FAISS and pickle indexes
+*.pkl
+*.index
+*.faiss
