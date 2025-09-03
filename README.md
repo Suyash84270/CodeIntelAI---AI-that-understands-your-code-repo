@@ -1,21 +1,28 @@
-#  AI Repo Assistant
+#  CodeIntelAI – AI that Understands Your Code Repo
 
-An interactive tool to **upload repositories, ask code-related questions, and get summaries** using FastAPI + Streamlit + LLMs.
+**CodeIntelAI** is an **AI-powered assistant** that can read your code repository, answer natural language questions, and summarize files.  
+
+It is built with a **FastAPI backend** for AI logic and a **Streamlit frontend** for an interactive UI – simulating a real-world **AI microservice architecture**.
+
+---
 
 ##  Features
-- Upload a `.zip` repository
-- Ask natural language questions about the code
-- Get file-level summaries in plain English
-- Persistent Q&A history in the UI
+1) Upload any code repository (as `.zip`)  
+2) Ask natural language questions about the repo  
+3) Summarize individual Python files in plain English  
+4) Retrieves function/class definitions with **line numbers**  
+5) Uses **FAISS + embeddings** for semantic code search  
+6) Backend powered by **FastAPI** + Hugging Face LLM  
+7) Frontend powered by **Streamlit** for recruiters & non-tech users  
 
-##  Tech Stack
-- **FastAPI** → Backend API
-- **Streamlit** → Interactive frontend
-- **Sentence Transformers + FAISS** → Embeddings & semantic search
-- **LaMini-T5** → Lightweight summarization/Q&A LLM
+---
 
-##  Setup
-```bash
-git clone https://github.com/your-username/ai-repo-assistant.git
-cd ai-repo-assistant
-pip install -r requirements.txt
+##  Architecture
+
+```mermaid
+graph TD;
+    A[Streamlit Frontend] <--> B[FastAPI Backend];
+    B --> C[LLM: LaMini-T5-738M];
+    B --> D[Embeddings: all-MiniLM-L6-v2];
+    D --> E[FAISS Vector Store];
+    B --> F[Code Parser + Line Numbers];

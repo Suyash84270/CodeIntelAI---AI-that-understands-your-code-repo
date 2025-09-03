@@ -1,8 +1,7 @@
-fastapi
-uvicorn
 streamlit
+requests
 transformers
 sentence-transformers
 faiss-cpu
-requests
-torch
+fastapi
+uvicorn
